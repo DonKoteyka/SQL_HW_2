@@ -10,7 +10,7 @@ id SERIAL PRIMARY KEY,
 name varchar(20) not null,
 time integer,
 -- for time use seconds but no more then 600 seconds
-album_id integer UNIQUE references album(id),
+album_id integer references album(id),
 CONSTRAINT check_time_1 CHECK (time < '600')
 );
 create table if not exists singer(
